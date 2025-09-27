@@ -61,6 +61,7 @@ More comprehensive demos of the `Console` class are provided, as follows:
 | ---- | ---- |
 | `demo.dart` | Suite of test demos that showcase various capabilities |
 | `main.dart` | Basic demo of how to get started with the `dart_console` |
+| `menu.dart` | Demonstration of a selction menu using `dart_console` |
 | `keys.dart` | Demonstrates how `dart_console` processes control characters |
 | `readline.dart` | Sample command-line interface / REPL |
 | `kilo.dart` | Rudimentary text editor |

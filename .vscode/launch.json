@@ -6,9 +6,10 @@
     "configurations": [
         {
             "name": "Dart",
-            "program": "example/keys.dart",
+            "program": "example/menu.dart",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "console": "externalTerminal",
         }
     ]
 }

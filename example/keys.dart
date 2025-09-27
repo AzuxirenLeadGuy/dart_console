@@ -1,10 +1,7 @@
-import 'dart:io';
-
 import 'package:dart_console/dart_console.dart';
 
-final console = Console();
-
 void main() {
+  final console = Console();
   console.writeLine(
       'This sample demonstrates keyboard input. Press any key including control keys');
   console.writeLine(
@@ -17,9 +14,10 @@ void main() {
       console.clearScreen();
       console.resetCursorPosition();
       console.rawMode = false;
-      exit(0);
+      return;
     } else {
-      print(key);
+      print(
+          "Key: $key \t||\t Control: ${key.isControl} \t||\t CC: ${key.controlChar} ");
     }
     key = console.readKey();
   }

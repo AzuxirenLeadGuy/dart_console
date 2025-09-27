@@ -21,7 +21,7 @@ import 'textalignment.dart';
 /// for the underlying system representation (e.g. one-based for VT-style
 /// displays).
 class Coordinate extends Point<int> {
-  const Coordinate(int row, int col) : super(row, col);
+  const Coordinate(super.row, super.col);
 
   int get row => x;
   int get col => y;
@@ -549,9 +549,7 @@ class Console {
       if (key.isControl) {
         switch (key.controlChar) {
           case ControlCharacter.enter:
-            if (_scrollbackBuffer != null) {
-              _scrollbackBuffer!.add(buffer);
-            }
+            _scrollbackBuffer?.add(buffer);
             writeLine();
             return buffer;
           case ControlCharacter.ctrlC:
@@ -588,13 +586,13 @@ class Console {
             break;
           case ControlCharacter.arrowUp:
             if (_scrollbackBuffer != null) {
-              buffer = _scrollbackBuffer!.up(buffer);
+              buffer = (_scrollbackBuffer as ScrollbackBuffer).up(buffer);
               index = buffer.length;
             }
             break;
           case ControlCharacter.arrowDown:
             if (_scrollbackBuffer != null) {
-              final temp = _scrollbackBuffer!.down();
+              final temp = _scrollbackBuffer?.down();
               if (temp != null) {
                 buffer = temp;
                 index = buffer.length;
